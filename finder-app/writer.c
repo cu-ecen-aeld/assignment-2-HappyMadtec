@@ -6,11 +6,12 @@
 
 int main(int argc, char *argv[]) {
     openlog(argv[0], LOG_PID | LOG_CONS, LOG_USER);
-
+  if (argc){
     if (argc != 3) {
         syslog(LOG_ERR, "Error: Not enough arguments\n");
         closelog();
         return 1;
+        
     } else {
         if (strncmp(argv[1], "/", 1) == 0) {
             syslog(LOG_INFO, "This is an absolute path\n");
@@ -65,7 +66,10 @@ int main(int argc, char *argv[]) {
             }
         }
     }
+    }
 
     closelog();
-    return 0;
+    return 0;}
+    else{
+    return 1;}
 }
