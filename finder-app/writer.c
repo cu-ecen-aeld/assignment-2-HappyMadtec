@@ -6,12 +6,10 @@
 
 int main(int argc, char *argv[]) {
     openlog(argv[0], LOG_PID | LOG_CONS, LOG_USER);
-  if (argc){
     if (argc != 3) {
         syslog(LOG_ERR, "Error: Not enough arguments\n");
         closelog();
         return 1;
-        
     } else {
         if (strncmp(argv[1], "/", 1) == 0) {
             syslog(LOG_INFO, "This is an absolute path\n");
@@ -19,10 +17,10 @@ int main(int argc, char *argv[]) {
             char directory_name[256];
             char file_name[256];
             if (argv[2] == NULL) {
-        syslog(LOG_ERR, "Error: No string to write specified\n");
-        closelog();
-        return 1;
-    }
+                syslog(LOG_ERR, "Error: No string to write specified\n");
+                closelog();
+                return 1;
+            }
             char *last_slash = strrchr(argv[1], '/');
             if (last_slash != NULL) {
                 strncpy(directory_name, argv[1], last_slash - argv[1]);
@@ -71,10 +69,8 @@ int main(int argc, char *argv[]) {
             }
         }
     }
-    }
 
     closelog();
-    return 0;}
-    else{
-    return 1;}
+    return 0;
 }
+
