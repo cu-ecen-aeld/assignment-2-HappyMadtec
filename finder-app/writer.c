@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
     if (argc != 3) {
         syslog(LOG_ERR, "Error: Not enough arguments\n");
         closelog();
-        exit(1);
+        return 1;
     } else {
         if (strncmp(argv[1], "/", 1) == 0) {
             syslog(LOG_INFO, "This is an absolute path\n");
