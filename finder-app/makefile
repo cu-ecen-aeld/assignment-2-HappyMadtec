@@ -8,7 +8,9 @@ link: compile
 
 compile:
 	${CROSS_COMPILE}gcc -c -Wall $(SRC) -o writer.o
-	
+
+main:
+	echo "Compilation finished"
 
 clean:
 	rm -f writer.o
