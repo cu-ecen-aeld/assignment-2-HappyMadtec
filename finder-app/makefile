@@ -8,15 +8,12 @@ link: compile
 
 compile:
 	${CROSS_COMPILE}gcc -c -Wall $(SRC) -o writer.o
-
 main:
-	echo "Compilation finished"
+	echo "compilations completed"
 
 clean:
 	rm -f writer.o
 	echo "Cleaned"
 
-clean-all:
-	rm -f writer.o
-	rm -f writer
+.PHONY: clean
 	
