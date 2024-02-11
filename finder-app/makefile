@@ -14,5 +14,7 @@ clean:
 	rm -f writer.o
 	echo "Cleaned"
 
-.PHONY: clean
+clean-all:
+	rm -f writer.o
+	rm -f writer
 	
