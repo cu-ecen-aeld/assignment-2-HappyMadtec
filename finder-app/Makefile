@@ -12,8 +12,6 @@ main:
 	echo "compilations completed"
 
 clean:
-	rm -f writer.o
-	echo "Cleaned"
+	rm *.o writer
 
-.PHONY: clean
 	
