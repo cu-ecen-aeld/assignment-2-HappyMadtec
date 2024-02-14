@@ -14,4 +14,3 @@ main:
 clean:
 	rm *.o writer
 
-	
