@@ -11,6 +11,5 @@ compile:
 main:
 	echo "compilations completed"
 
-clean:
-	rm *.o writer
+
 
