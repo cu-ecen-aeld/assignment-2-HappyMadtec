@@ -5,7 +5,6 @@ if [ -x ./writer ]; then
 else
     echo "./writer does not exist or is not executable"
 fi
-make clean
 make
 ./writer $1 $2
 exit $?
